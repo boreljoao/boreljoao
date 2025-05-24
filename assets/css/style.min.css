@@ -1,37 +1,37 @@
 :root {
     --color-dark: #131010;
-    --color-light: #ffe7d3;
+    --color-light: #fc9f53;
     --color-accent: #ff4d4d;
     --transition-base: 0.3s ease;
     --font-heading: 'Cormorant', serif;
     --font-body: 'Montserrat', sans-serif;
 
-     /* Tipografia */
-     --font-primary: 'Montserrat', sans-serif;
-     --font-secondary: 'Playfair Display', serif;
-     
-     /* Espaçamentos */
-     --space-xs: 0.5rem;
-     --space-sm: 1rem;
-     --space-md: 2rem;
-     --space-lg: 3rem;
-     --space-xl: 4rem;
-     
-     /* Bordas */
-     --radius-sm: 4px;
-     --radius-md: 8px;
-     --radius-lg: 16px;
-     --radius-full: 50%;
-     
-     /* Sombras */
-     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-     
-     /* Transições */
-     --transition-fast: 0.2s ease;
-     --transition-normal: 0.4s ease;
-     --transition-slow: 0.6s ease;
+    /* Tipografia */
+    --font-primary: 'Montserrat', sans-serif;
+    --font-secondary: 'Playfair Display', serif;
+    
+    /* Espaçamentos */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 2rem;
+    --space-lg: 3rem;
+    --space-xl: 4rem;
+    
+    /* Bordas */
+    --radius-sm: 4px;
+    --radius-md: 8px;
+    --radius-lg: 16px;
+    --radius-full: 50%;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
+    
+    /* Transições */
+    --transition-fast: 0.2s ease;
+    --transition-normal: 0.4s ease;
+    --transition-slow: 0.6s ease;
 }
 
 /* Reset e Base */
@@ -49,7 +49,7 @@ html {
 
 body {
     background-color: var(--color-dark);
-    color: var(--color-dark);
+    color: var(--color-dark); /* Mantido, mas o conteúdo principal terá cor clara no modo light */
     font-family: var(--font-body);
     line-height: 1.6;
     overflow-x: hidden;
@@ -89,6 +89,7 @@ body {
     from { transform: rotate(0turn); }
     to { transform: rotate(1turn); }
 }
+
 .cursor {
     position: fixed;
     width: 20px;
@@ -119,9 +120,8 @@ body {
     width: 100%;
     min-height: 100vh;
     display: flex;
-    background-color: var(--color-light);
+    background-color: var(--color-light); /* Cor de fundo principal do conteúdo */
     overflow: hidden;
-    
 }
 
 .sidebar {
@@ -129,9 +129,11 @@ body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    padding: 2rem;
+    padding: var(--space-md); /* Usando variável de espaçamento */
     position: relative;
     z-index: 1;
+    background-color: var(--color-dark); /* Sidebar com fundo escuro */
+    color: var(--color-light); /* Texto do sidebar claro */
 }
 
 .main-content {
@@ -150,7 +152,7 @@ body {
 }
 
 .sidebar__top a {
-    color: inherit;
+    color: inherit; /* Herda a cor do .sidebar (var(--color-light)) */
     text-decoration: none;
     transition: color var(--transition-base);
 }
@@ -159,40 +161,24 @@ body {
     color: var(--color-accent);
 }
 
-.sidebar__bottom {
+.sidebar__bottom { /* Não está sendo usado no HTML fornecido, mas mantido caso haja planos */
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 1rem;
+    gap: var(--space-sm);
 }
 
-.logo {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
-    filter: drop-shadow(0 2px 5px rgba(0, 0, 0, 0.1));
-    transition: transform var(--transition-base);
-}
-
-.logo:hover {
-    transform: scale(1.05);
-}
-
-.role {
-    font-weight: 700;
-    font-size: 1.25rem;
-    text-align: center;
-}
 /* Sidebar Credits */
 .sidebar__credits {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 0.5rem;
+    justify-content: flex-start; /* Alinhado à esquerda por padrão */
+    gap: var(--space-xs);
     font-size: 0.875rem;
-    color: var(--color-dark);
-    margin-bottom: auto;
-    padding: 1rem 0;
+    color: var(--color-light); /* Texto dos créditos claro */
+    margin-top: auto; /* Empurra para o final do sidebar */
+    padding: var(--space-sm) 0;
 }
 
 .made-by {
@@ -202,7 +188,7 @@ body {
 .author-name {
     font-weight: 600;
     text-decoration: none;
-    color: var(--color-dark);
+    color: var(--color-light); /* Cor do nome do autor clara */
     transition: color var(--transition-base);
     position: relative;
 }
@@ -228,15 +214,18 @@ body {
 
 .copyright {
     opacity: 0.6;
+    width: 100%; /* Para garantir quebra de linha se necessário em telas menores */
+    text-align: left; /* Alinhamento padrão */
 }
 
 /* Brand Logo */
 .sidebar__brand {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-    margin-top: 2rem;
+    align-items: center; /* Centraliza o logo e tagline */
+    gap: var(--space-sm);
+    margin-bottom: var(--space-md); /* Adiciona margem inferior (era margin-top) */
+    padding-top: var(--space-md); /* Adiciona um respiro no topo do sidebar */
 }
 
 .logo-link {
@@ -246,54 +235,29 @@ body {
 
 .logo {
     width: 100%;
-    max-width: 200px;
+    max-width: 180px; /* Levemente ajustado */
     height: auto;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     object-fit: contain;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-md);
     transition: all var(--transition-base);
+    background-color: var(--color-light); /* Fundo claro para o logo se destacar no sidebar escuro */
+    padding: 0.5rem; /* Pequeno preenchimento interno para o logo */
 }
 
 .logo:hover {
     transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+    box-shadow: var(--shadow-lg);
 }
 
 .brand-tagline {
     font-weight: 600;
     font-size: 1rem;
     text-align: center;
-    color: var(--color-dark);
+    color: var(--color-light); /* Tagline clara */
     opacity: 0.9;
     letter-spacing: 0.5px;
 }
-
-/* Responsivo */
-@media (max-width: 1024px) {
-    .sidebar__credits {
-        justify-content: center;
-        padding: 0.5rem 0 1.5rem;
-    }
-    
-    .sidebar__brand {
-        margin-top: 1rem;
-    }
-    
-    .logo {
-        max-width: 160px;
-    }
-    
-    .brand-tagline {
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .logo {
-        max-width: 140px;
-    }
-}
-
 
 /* Navegação */
 .navigation {
@@ -304,10 +268,10 @@ body {
 
 .navigation__link {
     text-decoration: none;
-    color: inherit;
-    transition: transform var(--transition-base);
-    display: block;
-    width: max-content;
+    color: var(--color-dark); /* Cor dos links da navegação no .main-content */
+    transition: transform var(--transition-base), color var(--transition-base);
+    display: block; /* Mantido */
+    width: max-content; /* Mantido */
 }
 
 .navigation__link:hover {
@@ -315,26 +279,29 @@ body {
     color: var(--color-accent);
 }
 
+.navigation__link:hover .navigation__title { /* Altera a cor do título no hover do link */
+    color: var(--color-accent);
+}
+
 .navigation__title {
-    font-family: var(--font-heading);
-    font-size: clamp(3rem, 12vw, 8rem);
-    font-weight: 500;
-    letter-spacing: -0.05em;
-    line-height: 0.9;
+    font-family: var(--font-secondary); /* Corrigido para usar a variável correta */
+    font-size: clamp(3rem, 10vw, 7rem); /* Levemente ajustado o máximo */
+    font-weight: 700; /* Era 500, Playfair Display costuma ser bold */
+    letter-spacing: -0.04em; /* Ajustado */
+    line-height: 0.95; /* Ajustado */
     text-transform: uppercase;
     margin: 0;
     transition: color var(--transition-base);
+    color: var(--color-dark); /* Cor inicial do título */
 }
 
 /* Responsivo */
 @media (max-width: 1024px) {
-    .cursor {
-        display: none;
-    }
-    
+    .cursor,
     .cursor-follower {
         display: none;
     }
+
     .container {
         flex-direction: column;
     }
@@ -342,49 +309,153 @@ body {
     .sidebar {
         width: 100%;
         min-height: auto;
-        padding: 1.5rem;
+        padding: var(--space-md) var(--space-sm); 
+        box-shadow: var(--shadow-md); 
+    }
+
+    .sidebar__brand {
+        margin-bottom: var(--space-sm);
+        padding-top: var(--space-sm); 
+        flex-direction: row; 
+        justify-content: space-between; 
+        align-items: center;
+    }
+
+    .logo {
+        max-width: 100px; 
+        padding: 0.3rem;
     }
     
-    .sidebar__top {
-        margin-bottom: 2rem;
+    .brand-tagline {
+        font-size: 0.9rem;
+        text-align: right; 
+        margin-left: var(--space-sm); 
+    }
+
+    .sidebar__credits {
+        justify-content: center; 
+        padding: var(--space-sm) 0 var(--space-md); 
+        font-size: 0.8rem;
+        margin-top: var(--space-sm); 
+    }
+    .copyright {
+        text-align: center; 
     }
     
     .main-content {
-        padding: 1.5rem;
+        padding: var(--space-lg) var(--space-sm); 
+        flex-grow: 1; 
     }
     
     .navigation {
-        gap: 1rem;
+        gap: var(--space-md); 
+        align-items: center; 
     }
     
+    .navigation__link {
+        /* Remove o deslocamento lateral no hover para mobile */
+        /* Isso é importante porque o texto será centralizado */
+        /* e um deslocamento lateral pareceria estranho */
+    }
+    .navigation__link:hover {
+         transform: none; /* Remove o transform translateX no hover para mobile */
+    }
+
     .navigation__title {
-        font-size: clamp(2.5rem, 10vw, 6rem);
+        /* AUMENTANDO A FONTE E CENTRALIZANDO */
+        font-size: 8em; /* Aumentado: min, ideal, max */
+        text-align: center; /* << NOVO: Centraliza o texto */
+    }
+
+    .sidebar__top { 
+        display: none;
     }
 }
 
 @media (max-width: 768px) {
+    .sidebar__brand {
+        flex-direction: column; 
+        align-items: center; 
+        gap: var(--space-xs);
+    }
+
+    .brand-tagline {
+        text-align: center; 
+        margin-left: 0; 
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        max-width: 90px;
+    }
+
     .navigation__title {
+        /* AUMENTANDO A FONTE E CENTRALIZANDO */
+        font-size: 5.5rem; /* Aumentado: min, ideal, max */
         letter-spacing: -0.03em;
+        text-align: center; /* << REFORÇO/HERANÇA: Centraliza o texto */
     }
     
-    .role {
+    .role { 
         font-size: 1rem;
+        text-align: center; 
+        margin-top: var(--space-sm); 
+    }
+    .cursor {
+        display: none;
+    }
+    
+    .cursor-follower {
+        display: none;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 520px) {
     .sidebar {
-        padding: 1rem;
+        padding: var(--space-sm);
     }
-    
+
     .main-content {
-        padding: 1rem;
+        padding: var(--space-md) var(--space-xs);
     }
     
+    .logo {
+        max-width: 80px; 
+    }
+
+    .brand-tagline {
+        font-size: 0.8rem;
+    }
+
+    .sidebar__credits {
+        font-size: 0.75rem;
+    }
+
+    .navigation {
+        gap: var(--space-sm); 
+    }
+
     .navigation__title {
-        font-size: clamp(2rem, 8vw, 4rem);
+        /* AUMENTANDO A FONTE E CENTRALIZANDO */
+        font-size: 4.5rem; /* Aumentado: min, ideal, max */
+        text-align: center; /* << REFORÇO/HERANÇA: Centraliza o texto */
     }
 }
-/* Adicione estas media queries ao seu CSS existente */
+@media (max-width: 430px) {
+    .navigation__title {
+        /* AUMENTANDO A FONTE E CENTRALIZANDO */
+        font-size: 3.6em; /* Aumentado: min, ideal, max */
+        text-align: center; /* << REFORÇO/HERANÇA: Centraliza o texto */
+    }
+    .navigation{
+        gap: 3.5rem; /* Aumenta o espaçamento entre os links */
+    }
+}
 
-
+@media (max-width: 347px) {
+    .navigation__title {
+        /* AUMENTANDO A FONTE E CENTRALIZANDO */
+        font-size: 3em; /* Aumentado: min, ideal, max */
+        text-align: center; /* << REFORÇO/HERANÇA: Centraliza o texto */
+    }
+}

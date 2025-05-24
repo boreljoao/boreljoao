@@ -1,6 +1,6 @@
 :root {
     --color-primary: #131010;
-    --color-secondary: #ffe7d3;
+    --color-secondary: #fc9f53;
     --color-accent: #ff4d4d;
     --color-text: #333;
     --transition-base: 0.3s ease;
@@ -316,6 +316,13 @@ body {
     
     .work-image {
         height: 180px;
+    }
+    .cursor {
+        display: none;
+    }
+    
+    .cursor-follower {
+        display: none;
     }
 }
 
