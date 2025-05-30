@@ -185,7 +185,7 @@ body {
 /* Grid de Trabalhos */
 .works-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 2rem;
 }
 
@@ -301,7 +301,7 @@ body {
 /* Responsivo */
 @media (max-width: 992px) {
     .works-grid {
-        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        /* grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
     }
 }
 
@@ -317,6 +317,10 @@ body {
     .work-image {
         height: 180px;
     }
+    .works-grid {
+        grid-template-columns: minmax(0, 1fr);
+    }
+    
     .cursor {
         display: none;
     }

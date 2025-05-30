@@ -352,11 +352,7 @@ body {
         align-items: center; 
     }
     
-    .navigation__link {
-        /* Remove o deslocamento lateral no hover para mobile */
-        /* Isso é importante porque o texto será centralizado */
-        /* e um deslocamento lateral pareceria estranho */
-    }
+   
     .navigation__link:hover {
          transform: none; /* Remove o transform translateX no hover para mobile */
     }
