@@ -54,7 +54,6 @@ html, body {
     padding: 0;
     background-color: var(--color-light); /* mesma cor do body no modo claro */
     overflow-x: hidden;
-    overscroll-behavior: none;
 }
 .body--active {
     background-color: var(--color-light);
