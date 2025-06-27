@@ -3,212 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Loja de projetos de João Pedro Borel - Em desenvolvimento">
+    <meta name="description" content="Loja de templates e sites prontos - João Pedro Borel">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="keywords" content="templates sites, sites prontos, loja de sites, desenvolvimento web">
+    <meta name="author" content="João Pedro Borel">
+    <meta http-equiv="X-Frame-Options" content="deny">
     
-    <!-- Pré-conexão para melhor performance -->
+    <!-- Open Graph / Social Media -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://boreljoao.com.br/loja">
+    <meta property="og:title" content="Loja de Templates | João Pedro Borel">
+    <meta property="og:image" content="https://boreljoao.com.br/assets/images/social-share.png">
+    <meta property="og:description" content="Sites e templates prontos para compra">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg"/>
+    <link rel="shortcut icon" href="assets/favicon/favicon.ico"/>
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png"/>
+    <meta name="apple-mobile-web-app-title" content="MyWebSite"/>
+    <link rel="manifest" href="assets/favicon/site.webmanifest"/>
+    
+    <!-- Fontes -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
     
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/loja.min.css">
-    <link rel="icon" type="image/svg+xml" href="assets/favicon/favicon.svg"/>
-<link rel="shortcut icon" href="assets/favicon/favicon.ico"/>
-<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png"/>
-<meta name="apple-mobile-web-app-title" content="MyWebSite"/>
-<link rel="manifest" href="assets/favicon/site.webmanifest"/>
-    <title>Loja | Em Desenvolvimento | João Pedro Borel</title>
-    <style>
-        /* Estilos mínimos para a página de construção */
-        :root{
-            --color-dark: #131010;
-    --color-light: #fc9f53;
-    --color-accent: #ff4d4d;
-    --transition-base: 0.3s ease;
-    --font-heading: 'Cormorant', serif;
-    --font-body: 'Montserrat', sans-serif;
-
-     /* Tipografia */
-     --font-primary: 'Montserrat', sans-serif;
-     --font-secondary: 'Playfair Display', serif;
-     
-     /* Espaçamentos */
-     --space-xs: 0.5rem;
-     --space-sm: 1rem;
-     --space-md: 2rem;
-     --space-lg: 3rem;
-     --space-xl: 4rem;
-     
-     /* Bordas */
-     --radius-sm: 4px;
-     --radius-md: 8px;
-     --radius-lg: 16px;
-     --radius-full: 50%;
-     
-     /* Sombras */
-     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
-     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.2);
-     
-     /* Transições */
-     --transition-fast: 0.2s ease;
-     --transition-normal: 0.4s ease;
-     --transition-slow: 0.6s ease;
-
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            height: 100vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .construction-container {
-            max-width: 800px;
-            padding: 2rem;
-        }
-        
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            margin-bottom: 1.5rem;
-            color: #ff4d4d;
-        }
-        
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            line-height: 1.6;
-        }
-        
-        .home-button {
-            display: inline-block;
-            padding: 1rem 2rem;
-            background-color: #ff4d4d;
-            color: white;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        
-        .home-button:hover {
-            background-color: #ff6b6b;
-            transform: translateY(-3px);
-        }
-        .cursor {
-    position: fixed;
-    width: 20px;
-    height: 20px;
-    border-radius: var(--radius-full);
-    background-color: var(--color-accent);
-    pointer-events: none;
-    mix-blend-mode: difference;
-    z-index: 999;
-    transform: translate(-50%, -50%);
-    transition: transform var(--transition-fast), width var(--transition-fast), height var(--transition-fast);
-}
-
-.cursor-follower {
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    border: 1px solid var(--color-accent);
-    border-radius: var(--radius-full);
-    pointer-events: none;
-    z-index: 998;
-    transform: translate(-50%, -50%);
-    transition: transform var(--transition-normal), opacity var(--transition-normal);
-}
-@media (max-width: 768px) {
-    .sidebar__brand {
-        flex-direction: column; 
-        align-items: center; 
-        gap: var(--space-xs);
-    }
-
-    .brand-tagline {
-        text-align: center; 
-        margin-left: 0; 
-        font-size: 0.85rem;
-    }
-
-    .logo {
-        max-width: 90px;
-    }
-
-    .navigation__title {
-        /* AUMENTANDO A FONTE E CENTRALIZANDO */
-        font-size: 5.5rem; /* Aumentado: min, ideal, max */
-        letter-spacing: -0.03em;
-        text-align: center; /* << REFORÇO/HERANÇA: Centraliza o texto */
-    }
     
-    .role { 
-        font-size: 1rem;
-        text-align: center; 
-        margin-top: var(--space-sm); 
-    }
-    .cursor {
-        display: none;
-    }
-    
-    .cursor-follower {
-        display: none;
-    }
-}
-
-    </style>
+    <title>Loja | João Pedro Borel</title>
 </head>
-<body> 
+<body>
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+    
+    <!-- Cursor Personalizado -->
     <div class="cursor"></div>
     <div class="cursor-follower"></div>
-    <div class="construction-container">
-        <h1>LOJA EM DESENVOLVIMENTO</h1>
-        <p>Estamos trabalhando duro para trazer projetos incríveis para você em breve!</p>
-        <a href="/" class="home-button">VOLTAR PARA HOME</a>
+    
+    <div class="shop-container">
+        <!-- Cabeçalho -->
+        <header class="shop-header">
+            <nav class="shop-nav">
+                <a href="/" class="home-link" aria-label="Voltar para página inicial">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                        <polyline points="9 22 9 12 15 12 15 22"></polyline>
+                    </svg>
+                    <span>VOLTAR</span>
+                </a>
+            </nav>
+            <h1 class="shop-title">Loja de Templates</h1>
+            <p class="shop-subtitle">Sites prontos para compra e personalização</p>
+        </header>
+
+        <!-- Conteúdo Principal -->
+        <main class="shop-main">
+            <section class="templates-section">
+                <div class="templates-grid">
+                    <!-- Template 1 -->
+                    <article class="template-card">
+                        <a href="https://exemplo.com/template1" target="_blank" rel="noopener noreferrer" class="template-link">
+                            <div class="template-preview" style="background-image: url('assets/images/template1-preview.jpg')">
+                                <div class="template-overlay">
+                                    <span class="view-template">Ver Demo</span>
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h3 class="template-name">Restaurante Elegante</h3>
+                                <p class="template-description">Site completo para restaurantes com menu digital, galeria e reservas</p>
+                                <div class="template-meta">
+                                    <span class="template-price">R$ 1.200,00</span>
+                                    <span class="template-category">Gastronomia</span>
+                                </div>
+                                <div class="template-tags">
+                                    <span class="tag">Responsivo</span>
+                                    <span class="tag">SEO</span>
+                                    <span class="tag">CMS</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Template 2 -->
+                    <article class="template-card">
+                        <a href="https://exemplo.com/template2" target="_blank" rel="noopener noreferrer" class="template-link">
+                            <div class="template-preview" style="background-image: url('assets/images/template2-preview.jpg')">
+                                <div class="template-overlay">
+                                    <span class="view-template">Ver Demo</span>
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h3 class="template-name">Portfólio Criativo</h3>
+                                <p class="template-description">Design moderno para artistas, fotógrafos e designers</p>
+                                <div class="template-meta">
+                                    <span class="template-price">R$ 900,00</span>
+                                    <span class="template-category">Portfólio</span>
+                                </div>
+                                <div class="template-tags">
+                                    <span class="tag">Galeria</span>
+                                    <span class="tag">Animado</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Template 3 -->
+                    <article class="template-card">
+                        <a href="/assets/websites/transporte.html" target="_blank" rel="noopener noreferrer" class="template-link">
+                            <div class="template-preview" style="background-image: url('assets/images/template3-preview.jpg')">
+                                <div class="template-overlay">
+                                    <span class="view-template">Ver Demo</span>
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h3 class="template-name">E-commerce Básico</h3>
+                                <p class="template-description">Loja virtual com até 50 produtos e checkout integrado</p>
+                                <div class="template-meta">
+                                    <span class="template-price">R$ 2.500,00</span>
+                                    <span class="template-category">E-commerce</span>
+                                </div>
+                                <div class="template-tags">
+                                    <span class="tag">Pagamentos</span>
+                                    <span class="tag">Carrinho</span>
+                                    <span class="tag">Painel Admin</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+
+                    <!-- Template 4 -->
+                    <article class="template-card">
+                        <a href="https://exemplo.com/template4" target="_blank" rel="noopener noreferrer" class="template-link">
+                            <div class="template-preview" style="background-image: url('assets/images/template4-preview.jpg')">
+                                <div class="template-overlay">
+                                    <span class="view-template">Ver Demo</span>
+                                </div>
+                            </div>
+                            <div class="template-info">
+                                <h3 class="template-name">Blog Moderno</h3>
+                                <p class="template-description">Plataforma para blogs com sistema de categorias e busca</p>
+                                <div class="template-meta">
+                                    <span class="template-price">R$ 800,00</span>
+                                    <span class="template-category">Blog</span>
+                                </div>
+                                <div class="template-tags">
+                                    <span class="tag">SEO</span>
+                                    <span class="tag">Comentários</span>
+                                </div>
+                            </div>
+                        </a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="cta-section">
+                <div class="cta-content">
+                    <h2>Interessado em um template personalizado?</h2>
+                    <p>Posso criar um site exclusivo para suas necessidades</p>
+                    <a href="/contato.html" class="cta-button">Solicitar Orçamento</a>
+                </div>
+            </section>
+        </main>
     </div>
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
-    // Esconder loader quando a página carregar
-    
-    const cursor = document.querySelector('.cursor');
-    const cursorFollower = document.querySelector('.cursor-follower');
-    
-    if (cursor && cursorFollower) {
-        document.addEventListener('mousemove', (e) => {
-            cursor.style.left = e.clientX + 'px';
-            cursor.style.top = e.clientY + 'px';
-            
-            setTimeout(() => {
-                cursorFollower.style.left = e.clientX + 'px';
-                cursorFollower.style.top = e.clientY + 'px';
-            }, 100);
-        });
-        
-        // Efeito em links e elementos interativos
-        const interactiveElements = document.querySelectorAll('a, button, .service-card, .skill-item');
-        
-        interactiveElements.forEach(el => {
-            el.addEventListener('mouseenter', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1.5)';
-                cursor.style.opacity = '0.5';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1.5)';
-            });
-            
-            el.addEventListener('mouseleave', () => {
-                cursor.style.transform = 'translate(-50%, -50%) scale(1)';
-                cursor.style.opacity = '1';
-                cursorFollower.style.transform = 'translate(-50%, -50%) scale(1)';
-            });
-        });
-    }})
-    </script>
+
+    <!-- JavaScript -->
+    <script src="assets/js/loja.min.js" defer></script>
 </body>
 </html>

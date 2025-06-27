@@ -185,6 +185,7 @@ body {
     color: var(--color-secondary);
     transition: all var(--transition-base);
     border: 1px solid rgba(255, 231, 211, 0.1);
+    border-radius: 50px;
 }
 
 .contact-card:hover {
@@ -207,11 +208,13 @@ body {
 .contact-card:hover .contact-icon {
     background-color: var(--color-accent);
     color: var(--color-primary);
+    
 }
 
 .contact-icon svg {
     width: 30px;
     height: 30px;
+    
 }
 
 .contact-info h3 {
