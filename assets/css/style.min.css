@@ -54,10 +54,19 @@ html, body {
     padding: 0;
     background-color: var(--color-dark);
     overflow-x: hidden;
+    overscroll-behavior: none;
+}
+
+body {
+    color: var(--color-dark);
+    font-family: var(--font-body);
+    line-height: 1.6;
+    transition: background-color 0.7s ease-in-out;
 }
 
 .body--active {
     background-color: var(--color-light);
+    color: var(--color-dark);
 }
 
 /* Loader */
