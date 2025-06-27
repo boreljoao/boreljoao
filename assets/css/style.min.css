@@ -52,21 +52,12 @@ html, body {
     height: 100%;
     margin: 0;
     padding: 0;
-    background-color: var(--color-dark);
+    background-color: var(--color-light); /* mesma cor do body no modo claro */
     overflow-x: hidden;
     overscroll-behavior: none;
 }
-
-body {
-    color: var(--color-dark);
-    font-family: var(--font-body);
-    line-height: 1.6;
-    transition: background-color 0.7s ease-in-out;
-}
-
 .body--active {
     background-color: var(--color-light);
-    color: var(--color-dark);
 }
 
 /* Loader */
