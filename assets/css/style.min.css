@@ -47,13 +47,12 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: var(--color-dark);
-    color: var(--color-dark); /* Mantido, mas o conteúdo principal terá cor clara no modo light */
-    font-family: var(--font-body);
-    line-height: 1.6;
     overflow-x: hidden;
-    transition: background-color 0.7s ease-in-out;
 }
 
 .body--active {
@@ -185,32 +184,7 @@ body {
     opacity: 0.8;
 }
 
-.author-name {
-    font-weight: 600;
-    text-decoration: none;
-    color: var(--color-light); /* Cor do nome do autor clara */
-    transition: color var(--transition-base);
-    position: relative;
-}
 
-.author-name:hover {
-    color: var(--color-accent);
-}
-
-.author-name::after {
-    content: '';
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    width: 0;
-    height: 1px;
-    background-color: var(--color-accent);
-    transition: width var(--transition-base);
-}
-
-.author-name:hover::after {
-    width: 100%;
-}
 
 .copyright {
     opacity: 0.6;
