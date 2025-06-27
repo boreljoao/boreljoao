@@ -45,15 +45,16 @@
 
 html {
     scroll-behavior: smooth;
-    background-color: var(--color-light);
+    background-color: var(--color-light) !important;
 }
 
-html, body {
+body {
     height: 100%;
     margin: 0;
     padding: 0;
     background-color: var(--color-light); /* mesma cor do body no modo claro */
     overflow-x: hidden;
+    overscroll-behavior: none;
 }
 .body--active {
     background-color: var(--color-light);
@@ -258,15 +259,15 @@ html, body {
 }
 
 .navigation__title {
-    font-family: var(--font-secondary);
-    font-size: clamp(3rem, 5rem, 7rem); /* Substituído 10vw por 5rem para evitar bug de viewport */
-    font-weight: 700;
-    letter-spacing: -0.04em;
-    line-height: 0.95;
+    font-family: var(--font-secondary); /* Corrigido para usar a variável correta */
+    font-size: clamp(3rem, 10vw, 7rem); /* Levemente ajustado o máximo */
+    font-weight: 700; /* Era 500, Playfair Display costuma ser bold */
+    letter-spacing: -0.04em; /* Ajustado */
+    line-height: 0.95; /* Ajustado */
     text-transform: uppercase;
     margin: 0;
     transition: color var(--transition-base);
-    color: var(--color-dark);
+    color: var(--color-dark); /* Cor inicial do título */
 }
 
 /* Responsivo */
