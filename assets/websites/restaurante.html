@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <!-- Meta tags para SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Restaurante Elegante - Experiência gastronômica premium com menu sazonal, vinhos selecionados e ambiente sofisticado. Reserve seu jantar inesquecível.">
+    <meta name="keywords" content="restaurante fino, gastronomia, jantar romântico, comida gourmet, chef premiado, vinho, experiência culinária">
+    <meta name="author" content="Restaurante Elegante">
+    <meta property="og:title" content="Restaurante Elegante - Gastronomia Sofisticada">
+    <meta property="og:description" content="Descubra uma experiência gastronômica única em nosso restaurante premiado.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://restauranteelegante.com">
+    <meta property="og:image" content="https://restauranteelegante.com/images/og-image.jpg">
+    
+    <!-- Favicon -->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <title>Restaurante Elegante | Gastronomia Sofisticada</title>
+    
+    <!-- Pré-conexão para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fontes -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="/assets/websites/css/restaurante.min.css">
+    
+    <!-- Schema Markup para SEO -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Restaurant",
+      "name": "Restaurante Elegante",
+      "image": "https://restauranteelegante.com/images/hero.jpg",
+      "@id": "https://restauranteelegante.com",
+      "url": "https://restauranteelegante.com",
+      "telephone": "+5511999999999",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Av. Paulista, 1000",
+        "addressLocality": "São Paulo",
+        "addressRegion": "SP",
+        "postalCode": "01310-100",
+        "addressCountry": "BR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "-23.563600",
+        "longitude": "-46.654390"
+      },
+      "openingHoursSpecification": {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": [
+          "Tuesday",
+          "Wednesday",
+          "Thursday",
+          "Friday",
+          "Saturday"
+        ],
+        "opens": "19:00",
+        "closes": "23:00"
+      },
+      "priceRange": "$$$$",
+      "servesCuisine": ["Gourmet", "Contemporânea"]
+    }
+    </script>
+</head>
+<body>
+    <!-- Loader de entrada -->
+    <div class="loader">
+        <div class="loader-spinner"></div>
+    </div>
+
+    <!-- Cursor personalizado -->
+    <div class="custom-cursor"></div>
+
+    <!-- Navegação -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="/assets/websites/restaurante.html" class="logo" aria-label="Restaurante Elegante - Página inicial">Elegante</a>
+            
+            <div class="menu-toggle" id="mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            
+            <ul class="nav-list">
+                <li><a href="#home" class="nav-link active" data-text="Início">Início</a></li>
+                <li><a href="#about" class="nav-link" data-text="Sobre">Sobre</a></li>
+                <li><a href="#menu" class="nav-link" data-text="Menu">Menu</a></li>
+                <li><a href="#gallery" class="nav-link" data-text="Galeria">Galeria</a></li>
+                <li><a href="#chef" class="nav-link" data-text="Chef">Chef</a></li>
+                <li><a href="#contact" class="nav-link" data-text="Contato">Contato</a></li>
+                <li><a href="#reservation" class="nav-link reservation-btn" data-text="Reservas">Reservas</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-slider">
+            <div class="slide active" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title" data-aos="fade-up">Experiência Gastronômica <span>Excepcional</span></h1>
+                        <p class="hero-subtitle" data-aos="fade-up" data-aos-delay="100">Sabores que contam histórias</p>
+                        <a href="#reservation" class="btn" data-aos="fade-up" data-aos-delay="200">Reserve Agora</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Vinhos <span>Selecionados</span></h1>
+                        <p class="hero-subtitle">A melhor seleção de rótulos internacionais</p>
+                        <a href="#menu" class="btn">Explore Nosso Menu</a>
+                    </div>
+                </div>
+            </div>
+            <div class="slide" style="background-image: url('https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80')">
+                <div class="slide-overlay"></div>
+                <div class="container">
+                    <div class="hero-content">
+                        <h1 class="hero-title">Ambiente <span>Sofisticado</span></h1>
+                        <p class="hero-subtitle">O cenário perfeito para momentos especiais</p>
+                        <a href="#gallery" class="btn">Conheça Nosso Espaço</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-nav">
+            <button class="prev-slide" aria-label="Slide anterior">&#10094;</button>
+            <div class="slide-dots"></div>
+            <button class="next-slide" aria-label="Próximo slide">&#10095;</button>
+        </div>
+    </section>
+
+    <!-- Sobre -->
+    <section id="about" class="section about">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nossa <span>História</span></h2>
+                <p class="section-subtitle">Tradição e inovação em harmonia</p>
+            </div>
+            
+            <div class="about-content">
+                <div class="about-text" data-aos="fade-right">
+                    <p>Fundado em 2010, o Restaurante Elegante nasceu da paixão por gastronomia sofisticada e atendimento impecável. Nosso chef executivo, com experiência em restaurantes estrelados na Europa, traz técnicas refinadas e ingredientes locais selecionados a dedo.</p>
+                    <p>Acreditamos que uma refeição memorável vai além do paladar - é uma experiência que envolve todos os sentidos. Cada prato em nosso menu sazonal conta uma história, inspirada nas tradições culinárias globais com um toque contemporâneo.</p>
+                    <div class="signature">
+                        <img src="https://images.unsplash.com/photo-1571845135699-240e4aedee03?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Assinatura do Chef" loading="lazy">
+                        <p>Chef Roberto Silva</p>
+                    </div>
+                </div>
+                
+                <div class="about-images" data-aos="fade-left">
+                    <div class="image-stack">
+                        <div class="image-stack-item image-stack-item-bottom">
+                            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Interior do restaurante" loading="lazy">
+                        </div>
+                        <div class="image-stack-item image-stack-item-top">
+                            <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Prato gourmet" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="awards" data-aos="fade-up">
+                <h3>Reconhecimento</h3>
+                <div class="awards-grid">
+                    <div class="award-item">
+                        <div class="award-icon">🏆</div>
+                        <p>Melhor Restaurante - Prêmio Gastronômico 2022</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🍽️</div>
+                        <p>2 Estrelas - Guia Michelin 2023</p>
+                    </div>
+                    <div class="award-item">
+                        <div class="award-icon">🌟</div>
+                        <p>Excelência em Serviço - Wine Spectator</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Menu -->
+    <section id="menu" class="section menu">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nossa <span>Culinária</span></h2>
+                <p class="section-subtitle">Menu sazonal inspirado nos melhores ingredientes</p>
+            </div>
+            
+            <div class="menu-tabs" data-aos="fade-up">
+                <button class="menu-tab active" data-category="entradas">Entradas</button>
+                <button class="menu-tab" data-category="principais">Pratos Principais</button>
+                <button class="menu-tab" data-category="sobremesas">Sobremesas</button>
+                <button class="menu-tab" data-category="vinhos">Vinhos</button>
+            </div>
+            
+            <div class="menu-items-container">
+                <!-- Entradas -->
+                <div class="menu-category active" id="entradas">
+                    <div class="menu-item" data-aos="fade-up">
+                        <div class="menu-item-content">
+                            <h3>Carpaccio de Beterraba</h3>
+                            <p>Beterraba orgânica, queijo de cabra, nozes caramelizadas, microgreens e redução de balsâmico</p>
+                            <span class="price">R$ 48</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Carpaccio de Beterraba" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-aos="fade-up" data-aos-delay="100">
+                        <div class="menu-item-content">
+                            <h3>Tartare de Atum</h3>
+                            <p>Atum fresco, abacate, gergelim preto, molho de soja trufado e chips de batata-doce</p>
+                            <span class="price">R$ 68</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1551504734-5ee1c4a1479b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Tartare de Atum" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item" data-aos="fade-up" data-aos-delay="200">
+                        <div class="menu-item-content">
+                            <h3>Foie Gras</h3>
+                            <p>Foie gras selado, geleia de frutas vermelhas, pão brioche torrado e flor de sal</p>
+                            <span class="price">R$ 92</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1606787366850-de6330128bfc?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Foie Gras" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Pratos Principais -->
+                <div class="menu-category" id="principais">
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>Risoto de Cogumelos Silvestres</h3>
+                            <p>Arroz arbóreo, mix de cogumelos sazonais, trufa negra, parmesão e vinho branco</p>
+                            <span class="price">R$ 98</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Risoto de Cogumelos" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>Filé Mignon Wellington</h3>
+                            <p>Filé mignon premium, massa folhada, patê, cogumelos e redução de vinho tinto</p>
+                            <span class="price">R$ 148</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1588168333986-5078d3ae3976?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Filé Mignon Wellington" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>Salmão com Crosta de Pistache</h3>
+                            <p>Salmão selvagem, crosta de pistache, purê de ervilhas e molho de limão siciliano</p>
+                            <span class="price">R$ 128</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Salmão com Crosta de Pistache" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Sobremesas -->
+                <div class="menu-category" id="sobremesas">
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>Soufflé de Chocolate</h3>
+                            <p>Soufflé quente de chocolate belga com sorvete de baunilha e crocante de amêndoas</p>
+                            <span class="price">R$ 42</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Soufflé de Chocolate" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>Crème Brûlée</h3>
+                            <p>Clássico crème brûlée com baunilha do Madagascar e crosta de açúcar caramelizado</p>
+                            <span class="price">R$ 38</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1562440499-64c9a111f713?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Crème Brûlée" loading="lazy">
+                        </div>
+                    </div>
+                    
+                    <div class="menu-item">
+                        <div class="menu-item-content">
+                            <h3>Cheesecake de Frutas Vermelhas</h3>
+                            <p>Cheesecake cremoso, calda de frutas vermelhas e raspas de limão siciliano</p>
+                            <span class="price">R$ 36</span>
+                        </div>
+                        <div class="menu-item-image">
+                            <img src="https://images.unsplash.com/photo-1571115177098-24ec42ed204d?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Cheesecake de Frutas Vermelhas" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Vinhos -->
+                <div class="menu-category" id="vinhos">
+                    <div class="wine-item">
+                        <div class="wine-info">
+                            <h3>Château Margaux 2015</h3>
+                            <p class="wine-region">Bordeaux, França</p>
+                            <p class="wine-notes">Notas de cassis, tabaco e especiarias, taninos sedosos</p>
+                        </div>
+                        <div class="wine-price">
+                            <span class="glass">R$ 280</span>
+                            <span class="bottle">R$ 1.450</span>
+                        </div>
+                    </div>
+                    
+                    <div class="wine-item">
+                        <div class="wine-info">
+                            <h3>Sassicaia 2016</h3>
+                            <p class="wine-region">Toscana, Itália</p>
+                            <p class="wine-notes">Framboesa, chocolate amargo e toques minerais</p>
+                        </div>
+                        <div class="wine-price">
+                            <span class="glass">R$ 320</span>
+                            <span class="bottle">R$ 1.680</span>
+                        </div>
+                    </div>
+                    
+                    <div class="wine-item">
+                        <div class="wine-info">
+                            <h3>Cloudy Bay Sauvignon Blanc 2021</h3>
+                            <p class="wine-region">Marlborough, Nova Zelândia</p>
+                            <p class="wine-notes">Frutos tropicais, capim-limão e acidez vibrante</p>
+                        </div>
+                        <div class="wine-price">
+                            <span class="glass">R$ 95</span>
+                            <span class="bottle">R$ 480</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="menu-cta" data-aos="fade-up">
+                <p>Nosso menu muda sazonalmente para oferecer sempre os melhores ingredientes.</p>
+                <a href="#" class="btn btn-outline">Menu Completo (PDF)</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeria -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nossos <span>Momentos</span></h2>
+                <p class="section-subtitle">Uma jornada visual pela experiência Elegante</p>
+            </div>
+        </div>
+        
+        <div class="gallery-grid">
+            <div class="gallery-item" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ambiente do restaurante" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Ambiente Sofisticado</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Detalhe da mesa" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Detalhes Impecáveis</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="200">
+                <img src="https://images.unsplash.com/photo-1559847844-5315695dadae?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Prato gourmet" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Criações do Chef</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="300">
+                <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Bar de vinhos" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Bar de Vinhos</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-aos="zoom-in">
+                <img src="https://images.unsplash.com/photo-1424847651672-bf20a4b0982b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Jantar romântico" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Jantares Inesquecíveis</div>
+                </div>
+            </div>
+            
+            <div class="gallery-item" data-aos="zoom-in" data-aos-delay="100">
+                <img src="https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Prato de salmão" loading="lazy">
+                <div class="gallery-overlay">
+                    <div class="gallery-caption">Sabores Refinados</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="gallery-lightbox">
+            <span class="close-lightbox">&times;</span>
+            <img class="lightbox-content" id="lightbox-image">
+            <div class="lightbox-caption"></div>
+        </div>
+    </section>
+
+    <!-- Chef -->
+    <section id="chef" class="section chef">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Nosso <span>Chef</span></h2>
+                <p class="section-subtitle">A mente por trás da experiência gastronômica</p>
+            </div>
+            
+            <div class="chef-profile">
+                <div class="chef-image" data-aos="fade-right">
+                    <img src="https://images.unsplash.com/photo-1581299894007-aaa50297cf16?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Chef Roberto Silva" loading="lazy">
+                </div>
+                
+                <div class="chef-bio" data-aos="fade-left">
+                    <h3>Roberto Silva</h3>
+                    <p class="chef-title">Chef Executivo</p>
+                    <p>Com mais de 20 anos de experiência em cozinhas estreladas ao redor do mundo, o Chef Roberto Silva traz sua visão única para o Restaurante Elegante. Formado no renomado Le Cordon Bleu em Paris, Roberto trabalhou em estabelecimentos premiados em Barcelona, Tóquio e Nova York antes de retornar ao Brasil.</p>
+                    <p>Sua filosofia culinária se baseia no respeito aos ingredientes locais, técnicas precisas e apresentação impecável. "Cada prato deve contar uma história e despertar emoções", diz o Chef.</p>
+                    
+                    <div class="chef-signature">
+                        <img src="https://images.unsplash.com/photo-1571845135699-240e4aedee03?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Assinatura do Chef" loading="lazy">
+                    </div>
+                    
+                    <div class="chef-social">
+                        <a href="#" aria-label="Instagram do Chef"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter do Chef"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="LinkedIn do Chef"><i class="fab fa-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="chef-quote" data-aos="fade-up">
+                <blockquote>
+                    <p>"Cozinhar é uma forma de arte que envolve todos os sentidos. Minha missão é criar memórias gustativas que permaneçam com nossos clientes muito depois da última garfada."</p>
+                    <footer>- Chef Roberto Silva</footer>
+                </blockquote>
+            </div>
+        </div>
+    </section>
+
+    <!-- Depoimentos -->
+    <section class="section testimonials">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">O Que Dizem <span>Nossos Clientes</span></h2>
+                <p class="section-subtitle">Experiências compartilhadas</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial active">
+                    <div class="testimonial-content">
+                        <div class="rating">★★★★★</div>
+                        <blockquote>
+                            <p>"Uma experiência gastronômica inesquecível! Cada prato foi uma surpresa deliciosa, com sabores equilibrados e apresentação impecável. O serviço foi atencioso sem ser intrusivo. Voltaremos com certeza!"</p>
+                        </blockquote>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ana Carolina" loading="lazy">
+                            <div>
+                                <h4>Ana Carolina</h4>
+                                <p>Aniversário de Casamento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">★★★★★</div>
+                        <blockquote>
+                            <p>"O sommelier acertou em cheio na harmonização dos vinhos. O Filé Wellington estava perfeito, e a sobremesa (Soufflé de Chocolate) foi divina. Ambiente sofisticado e aconchegante ao mesmo tempo."</p>
+                        </blockquote>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1566492031773-4f4e44671857?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Ricardo Almeida" loading="lazy">
+                            <div>
+                                <h4>Ricardo Almeida</h4>
+                                <p>Jantar de Negócios</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial">
+                    <div class="testimonial-content">
+                        <div class="rating">★★★★☆</div>
+                        <blockquote>
+                            <p>"Adoramos a experiência degustação com harmonização. O Chef Roberto explicou cada prato com paixão e conhecimento. Destaque para o incrível Tartare de Atum e a seleção de queijos."</p>
+                        </blockquote>
+                        <div class="client-info">
+                            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=60" alt="Fernanda e Marcelo" loading="lazy">
+                            <div>
+                                <h4>Fernanda e Marcelo</h4>
+                                <p>Jantar Romântico</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="testimonials-nav">
+                <button class="prev-testimonial" aria-label="Depoimento anterior">&#10094;</button>
+                <div class="testimonial-dots"></div>
+                <button class="next-testimonial" aria-label="Próximo depoimento">&#10095;</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reservas -->
+    <section id="reservation" class="section reservation">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Faça sua <span>Reserva</span></h2>
+                <p class="section-subtitle">Garanta sua experiência gastronômica</p>
+            </div>
+            
+            <div class="reservation-container">
+                <div class="reservation-form" data-aos="fade-right">
+                    <form id="booking-form">
+                        <div class="form-group">
+                            <label for="name">Nome Completo</label>
+                            <input type="text" id="name" name="name" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">E-mail</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="phone">Telefone</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="date">Data</label>
+                                <input type="date" id="date" name="date" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="time">Horário</label>
+                                <select id="time" name="time" required>
+                                    <option value="">Selecione</option>
+                                    <option value="19:00">19:00</option>
+                                    <option value="19:30">19:30</option>
+                                    <option value="20:00">20:00</option>
+                                    <option value="20:30">20:30</option>
+                                    <option value="21:00">21:00</option>
+                                    <option value="21:30">21:30</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="guests">Número de Pessoas</label>
+                                <select id="guests" name="guests" required>
+                                    <option value="">Selecione</option>
+                                    <option value="1">1 pessoa</option>
+                                    <option value="2">2 pessoas</option>
+                                    <option value="3">3 pessoas</option>
+                                    <option value="4">4 pessoas</option>
+                                    <option value="5">5 pessoas</option>
+                                    <option value="6">6 pessoas</option>
+                                    <option value="7">7 pessoas</option>
+                                    <option value="8">8 pessoas</option>
+                                    <option value="9+">Grupo maior (9+)</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="occasion">Ocasião (Opcional)</label>
+                                <select id="occasion" name="occasion">
+                                    <option value="">Nenhuma em especial</option>
+                                    <option value="anniversary">Aniversário</option>
+                                    <option value="engagement">Noivado</option>
+                                    <option value="birthday">Aniversário</option>
+                                    <option value="business">Negócios</option>
+                                    <option value="other">Outra</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="requests">Pedidos Especiais (Opcional)</label>
+                            <textarea id="requests" name="requests" rows="3" style="resize: none;"></textarea>
+                        </div>
+                        
+                        <button type="submit" class="btn">Reservar Mesa</button> 
+                    </form>
+                </div>
+                
+                <div class="reservation-info" data-aos="fade-left">
+                    <h3>Horário de Funcionamento</h3>
+                    <ul class="hours-list">
+                        <li><span>Terça a Quinta</span> <span>19:00 - 23:00</span></li>
+                        <li><span>Sexta e Sábado</span> <span>19:00 - 00:00</span></li>
+                        <li><span>Domingo e Segunda</span> <span>Fechado</span></li>
+                    </ul>
+                    
+                    <div class="contact-info">
+                        <h3>Informações de Contato</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - São Paulo, SP</p>
+                        <p><i class="fas fa-phone"></i> (11) 99999-9999</p>
+                        <p><i class="fas fa-envelope"></i> reservas@elegante.com</p>
+                    </div>
+                    
+                    <div class="reservation-notes">
+                        <p>• Reservas com antecedência recomendadas, especialmente para fins de semana.</p>
+                        <p>• Código de vestimenta: elegante casual (não são permitidos shorts, chinelos ou regatas).</p>
+                        <p>• Cancelamentos devem ser feitos com pelo menos 24 horas de antecedência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contact" class="section contact">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2 class="section-title">Entre em <span>Contato</span></h2>
+                <p class="section-subtitle">Estamos à disposição para qualquer dúvida</p>
+            </div>
+            
+            <div class="contact-container">
+                <div class="contact-info" data-aos="fade-right">
+                    <h3>Informações</h3>
+                    <div class="info-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div>
+                            <h4>Endereço</h4>
+                            <p>Av. Paulista, 1000<br>São Paulo, SP - 01310-100</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <h4>Telefone</h4>
+                            <p>(11) 99999-9999</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-envelope"></i>
+                        <div>
+                            <h4>E-mail</h4>
+                            <p>contato@elegante.com</p>
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-clock"></i>
+                        <div>
+                            <h4>Horário</h4>
+                            <p>Terça a Sábado<br>19:00 - 23:00</p>
+                        </div>
+                    </div>
+                    
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" aria-label="TripAdvisor"><i class="fab fa-tripadvisor"></i></a>
+                    </div>
+                </div>
+                
+                <div class="contact-map" data-aos="fade-left">
+                    <div class="map-container">
+                        <!-- Mapa incorporado do Google Maps -->
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3657.287482899833!2d-46.65439092401713!3d-23.56360036179887!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce59c8da0aa315%3A0xd59f9431f2c9776a!2sAv.%20Paulista%2C%201000%20-%20Bela%20Vista%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001310-100!5e0!3m2!1spt-BR!2sbr!4v1620000000000!5m2!1spt-BR!2sbr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="contact-form-container" data-aos="fade-up">
+                <h3>Envie uma Mensagem</h3>
+                <form id="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" placeholder="Seu Nome" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Seu E-mail" required>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Assunto">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Sua Mensagem" rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn">Enviar Mensagem</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="newsletter">
+        <div class="container">
+            <div class="newsletter-container" data-aos="fade-up">
+                <div class="newsletter-text">
+                    <h3>Assine Nossa Newsletter</h3>
+                    <p>Receba novidades, eventos especiais e promoções exclusivas.</p>
+                </div>
+                <form class="newsletter-form">
+                    <input type="email" placeholder="Seu melhor e-mail" required>
+                    <button type="submit" class="btn">Assinar</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <h4>Restaurante Elegante</h4>
+                    <p>Uma experiência gastronômica que celebra os melhores ingredientes, técnicas refinadas e atendimento impecável.</p>
+                    <div class="footer-logo">Elegante</div>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Links Rápidos</h4>
+                    <ul>
+                        <li><a href="#home">Início</a></li>
+                        <li><a href="#about">Sobre</a></li>
+                        <li><a href="#menu">Menu</a></li>
+                        <li><a href="#gallery">Galeria</a></li>
+                        <li><a href="#chef">Chef</a></li>
+                        <li><a href="#contact">Contato</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Horário</h4>
+                    <ul>
+                        <li><span>Terça a Quinta</span> <span>19:00 - 23:00</span></li>
+                        <li><span>Sexta e Sábado</span> <span>19:00 - 00:00</span></li>
+                        <li><span>Domingo e Segunda</span> <span>Fechado</span></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-col">
+                    <h4>Contato</h4>
+                    <ul class="footer-contact">
+                        <li><i class="fas fa-map-marker-alt"></i> Av. Paulista, 1000 - SP</li>
+                        <li><i class="fas fa-phone"></i> (11) 99999-9999</li>
+                        <li><i class="fas fa-envelope"></i> contato@elegante.com</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2023 Restaurante Elegante. Todos os direitos reservados.</p>
+                </div>
+                
+                <div class="footer-legal">
+                    <a href="#">Política de Privacidade</a>
+                    <a href="#">Termos de Uso</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Botão Voltar ao Topo -->
+    <a href="#home" class="back-to-top" aria-label="Voltar ao topo"></a>
+
+    <!-- Scripts -->
+    <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+    <script src="/assets/websites/js/restaurante.min.js"></script>
+</body>
+</html>
