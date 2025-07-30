@@ -293,6 +293,122 @@ body {
     box-shadow: var(--shadow-md);
 }
 
+.donation-section {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-accent) 100%);
+    color: #fff;
+    padding: var(--space-xl) var(--space-md);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    margin: var(--space-xl) auto;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+.donation-section::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 50%;
+    z-index: 0;
+}
+.donation-content {
+    position: relative;
+    z-index: 1;
+}
+.donation-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: var(--space-sm);
+    color: #fff;
+}
+.donation-section p {
+    font-size: 1.2rem;
+    margin-bottom: var(--space-md);
+    color: #fff;
+}
+.donation-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--space-sm);
+}
+.donation-button {
+    background: #fff;
+    color: var(--color-accent);
+    font-weight: bold;
+    border: none;
+    border-radius: var(--radius-md);
+    padding: var(--space-sm) var(--space-lg);
+    font-size: 1.1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: background var(--transition-base), color var(--transition-base), transform var(--transition-base);
+}
+.donation-button:hover {
+    background: var(--color-accent);
+    color: #fff;
+    transform: translateY(-2px) scale(1.04);
+}
+@media (max-width: 600px) {
+    .donation-section {
+        padding: var(--space-lg) var(--space-sm);
+        max-width: 95vw;
+    }
+    .donation-section h2 {
+        font-size: 1.5rem;
+    }
+    .donation-section p {
+        font-size: 1rem;
+    }
+    .donation-button {
+        font-size: 1rem;
+        padding: var(--space-xs) var(--space-md);
+    }
+}
+
+.cart-bar {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    background: var(--color-secondary);
+    color: var(--color-primary);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    box-shadow: var(--shadow-lg);
+    display: flex;
+    align-items: center;
+    gap: var(--space-md);
+    z-index: 1000;
+    font-size: 1.1rem;
+    min-width: 280px;
+    max-width: 90vw;
+    justify-content: center;
+}
+.cart-bar .donation-button {
+    background: var(--color-accent);
+    color: #fff;
+    margin-left: var(--space-sm);
+    border-radius: var(--radius-md);
+    font-size: 1rem;
+    padding: var(--space-xs) var(--space-md);
+}
+@media (max-width: 600px) {
+    .cart-bar {
+        font-size: 0.95rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+    .cart-bar .donation-button {
+        font-size: 0.95rem;
+        padding: var(--space-xs) var(--space-sm);
+    }
+}
+
 /* Responsivo */
 @media (max-width: 768px) {
     .shop-container {

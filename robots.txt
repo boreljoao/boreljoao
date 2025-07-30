@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://boreljoao.com.br/sitemap.xml
+
+# Crawl-delay (opcional - para não sobrecarregar o servidor)
+Crawl-delay: 1 

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamento | Doação</title>
+    <link rel="stylesheet" href="assets/css/loja.min.css">
+    <style>
+        .payment-container {
+            max-width: 400px;
+            margin: 5vh auto;
+            background: #fff;
+            border-radius: 16px;
+            box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+            padding: 2rem;
+            text-align: center;
+        }
+        .payment-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: var(--color-accent);
+        }
+        .payment-summary {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .donation-qty-row {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 0.3rem;
+        }
+        #remove-one {
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffeaea;
+            border: none;
+            border-radius: 50%;
+            color: #ff4d4d;
+            font-size: 1.3rem;
+            font-weight: bold;
+            cursor: pointer;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 6px rgba(255,77,77,0.08);
+            outline: none;
+        }
+        #remove-one:hover, #remove-one:focus {
+            background: #ff4d4d;
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(255,77,77,0.18);
+        }
+        #remove-one:active {
+            background: #d32f2f;
+        }
+        #wallet_container {
+            margin-top: 2rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="payment-container">
+        <div class="payment-title">Finalizar Doação</div>
+        <div class="payment-summary" id="payment-summary">
+            <!-- Conteúdo gerado dinamicamente pelo JS -->
+        </div>
+        <div id="wallet_container"></div>
+        <button id="back-btn" class="donation-button" style="margin-top:2rem;">Voltar para a loja</button>
+    </div>
+    <script src="https://sdk.mercadopago.com/js/v2"></script>
+    <script>
+    function renderPaymentSummary() {
+        const qty = parseInt(localStorage.getItem('donationCart') || '0', 10);
+        const summary = document.getElementById('payment-summary');
+        if(qty === 0) {
+            summary.innerHTML = 'Seu carrinho está vazio.';
+            document.getElementById('wallet_container').style.display = 'none';
+            return 0;
+        } else {
+            summary.innerHTML = `
+            <div class="donation-qty-row">
+                Você está doando <span id="donation-qty">${qty}</span> x R$1,00
+                <button id="remove-one" title="Remover 1 doação">&times;</button>
+            </div>
+            <strong>Total: R$<span id="donation-total">${(qty * 1).toFixed(2).replace('.', ',')}</span></strong>
+            <button id="finalizar-pagar" class="donation-button" style="margin-top:1.5rem;">Finalizar e Pagar</button>
+            `;
+            document.getElementById('wallet_container').style.display = '';
+            return qty;
+        }
+    }
+
+    function updateSummaryAndEvents() {
+        let qty = renderPaymentSummary();
+        if(qty) renderCheckout(qty);
+        const removeBtn = document.getElementById('remove-one');
+        if(removeBtn) {
+            removeBtn.onclick = function() {
+                let qty = parseInt(localStorage.getItem('donationCart') || '0', 10);
+                if(qty > 0) {
+                    qty--;
+                    localStorage.setItem('donationCart', qty);
+                    updateSummaryAndEvents();
+                    if(qty > 0) {
+                        renderCheckout(qty);
+                    } else {
+                        document.getElementById('wallet_container').innerHTML = '';
+                    }
+                }
+            };
+        }
+        const finalizarBtn = document.getElementById('finalizar-pagar');
+        if(finalizarBtn) {
+            finalizarBtn.onclick = function() {
+                const wallet = document.getElementById('wallet_container');
+                if(wallet) {
+                    wallet.scrollIntoView({behavior: 'smooth', block: 'center'});
+                    wallet.style.boxShadow = '0 0 0 4px #ff4d4d66';
+                    setTimeout(() => { wallet.style.boxShadow = ''; }, 1200);
+                }
+            };
+        }
+    }
+
+    function renderCheckout(qty) {
+        document.getElementById('wallet_container').innerHTML = '';
+        if(qty > 0) {
+            const mp = new MercadoPago('APP_USR-f873b61f-25d9-4c43-be4c-505cc5588daf', {locale: 'pt-BR'});
+            fetch('http://localhost:3001/api/criar-preferencia', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({
+                    quantity: qty
+                })
+            })
+            .then(res => res.json())
+            .then(data => {
+                if(data.id) {
+                    mp.checkout({
+                        preference: {
+                            id: data.id
+                        },
+                        render: {
+                            container: '#wallet_container',
+                            label: 'Pagar com Mercado Pago'
+                        }
+                    });
+                } else {
+                    document.getElementById('wallet_container').innerHTML = 'Erro ao carregar pagamento.';
+                }
+            });
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        updateSummaryAndEvents();
+        document.getElementById('back-btn').onclick = () => {
+            window.location.href = 'loja.html';
+        };
+    });
+    </script>
+</body>
+</html> 
